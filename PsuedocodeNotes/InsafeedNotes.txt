@@ -1,0 +1,2 @@
+Instagram feed as tiles:
+https://www.npmjs.com/package/react-instafeed
