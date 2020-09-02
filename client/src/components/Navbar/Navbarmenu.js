@@ -1,40 +1,56 @@
-import React from 'react';
-import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import './Navbarmenu.css';
+import React, { Component } from 'react';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBContainer } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-export default function Navbarmenu() {
-	return (
-		<div>
-			<Navbar expand="lg" className="Navbar-CSS">
-				<Container className="Navbar-CSS">
-					<Navbar.Brand href="#home" id="Navbar-Logo">
-						LOGO HERE
-					</Navbar.Brand>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="mr-auto">
-							<Nav.Link href="#home">About</Nav.Link>
-							<Nav.Link href="#pricing">Pricing</Nav.Link>
-							<Nav.Link href="#link">Contact</Nav.Link>
-						</Nav>
-						<Navbar.Collapse className="justify-content-end">
-							<Navbar.Text>
-								Signed in as: <a href="#login">NAME HERE </a>
-							</Navbar.Text>
-							<Navbar.Text>&nbsp; | </Navbar.Text>
-							<NavDropdown title="Menu" id="basic-nav-dropdown">
-								<NavDropdown.Item href="#action/3.1">One Pager</NavDropdown.Item>
-								<NavDropdown.Item href="#action/3.2">Partner Filter</NavDropdown.Item>
-								<NavDropdown.Item href="#action/3.3">Add New Partner</NavDropdown.Item>
-								<NavDropdown.Divider />
-								<NavDropdown.Item href="#action/3.4">Profile</NavDropdown.Item>
-								<NavDropdown.Divider />
-								<NavDropdown.Item href="#action/3.5">App Support</NavDropdown.Item>
-							</NavDropdown>
-						</Navbar.Collapse>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar>
-		</div>
-	);
+class NavbarPage extends Component {
+	state = {
+		isOpen: false,
+	};
+
+	toggleCollapse = () => {
+		this.setState({ isOpen: !this.state.isOpen });
+	};
+
+	render() {
+		return (
+			<Router>
+				<MDBNavbar color="elegant-color-dark" dark expand="md" className="sticky-top">
+					<MDBContainer>
+						<MDBNavbarBrand>
+							<strong className="white-text">Garrett's Mobile Auto Detail</strong>
+						</MDBNavbarBrand>
+						<MDBNavbarToggler onClick={this.toggleCollapse} />
+						<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+							<MDBNavbarNav right>
+								<MDBNavItem active>
+									<MDBNavLink to="#!">Home</MDBNavLink>
+								</MDBNavItem>
+								<MDBNavItem>
+									<MDBNavLink to="#!">Features</MDBNavLink>
+								</MDBNavItem>
+								<MDBNavItem>
+									<MDBNavLink to="#!">Pricing</MDBNavLink>
+								</MDBNavItem>
+								<MDBNavItem>
+									<MDBDropdown>
+										<MDBDropdownToggle nav caret>
+											<span className="mr-2">Dropdown</span>
+										</MDBDropdownToggle>
+										<MDBDropdownMenu>
+											<MDBDropdownItem href="#!">Action</MDBDropdownItem>
+											<MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
+											<MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+											<MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+										</MDBDropdownMenu>
+									</MDBDropdown>
+								</MDBNavItem>
+							</MDBNavbarNav>
+						</MDBCollapse>
+					</MDBContainer>
+				</MDBNavbar>
+			</Router>
+		);
+	}
 }
+
+export default NavbarPage;
