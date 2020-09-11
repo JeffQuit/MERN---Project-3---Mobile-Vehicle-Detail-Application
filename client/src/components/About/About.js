@@ -1,21 +1,29 @@
 import React from 'react';
-import { MDBContainer, MDBMedia } from 'mdbreact';
+import { MDBJumbotron, MDBContainer, MDBRow, MDBCol, MDBCardBody, MDBCardText,  MDBCardTitle } from "mdbreact";
 import './About.css';
 
 export default function About() {
 	return (
 		<div className="About-Full-Container">
-			<MDBContainer>
-				<MDBMedia>
-					<MDBMedia body>
-						<MDBMedia heading>Media object</MDBMedia>
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</MDBMedia>
-					<MDBMedia right className="ml-3" href="#">
-						<MDBMedia object src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg" alt="Generic placeholder image" />
-					</MDBMedia>
-				</MDBMedia>
-			</MDBContainer>
+    <MDBContainer className="mt-5 text-center">
+      <MDBRow>
+        <MDBCol>
+          <MDBJumbotron>
+            <MDBCardBody>
+              <MDBCardTitle className="h2">
+                About us
+              </MDBCardTitle>
+              <p className="blue-text my-4 font-weight-bold">
+               Family owned and operrated. EST 2020
+              </p>
+              <MDBCardText>
+			   Gera’s automotive detailing services began business in early 2020 by co owners/ operators Gerardo Yanez & Stephanie Ibarria. Gera’s passion for detailing first started as a hobby of his, along side his best friend Victor Gutierrez. When things got tough or life was too stressful, there was nothing like the satisfaction of a smooth finish on Gera’s E30. Naturally the hobby turned into business all thanks to family and friends. 
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBJumbotron>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
 		</div>
 	);
 }
