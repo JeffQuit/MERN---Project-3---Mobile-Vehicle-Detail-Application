@@ -1,4 +1,4 @@
-{
+
 	"name": "1pagerapp",
 	"version": "1.0.0",
 	"description": "MobileDetailingService",
@@ -34,6 +34,9 @@
 		"mongoose": "^5.10.3",
 		"morgan": "^1.10.0",
 		"passport": "^0.4.1",
-		"passport-local": "^1.0.0"
+		"passport-local": "^1.0.0",
+    "@sendgrid/mail": "^7.2.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
 	}
-}
+

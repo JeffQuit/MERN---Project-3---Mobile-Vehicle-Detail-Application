@@ -1,0 +1,22 @@
+.Package-BulletPts-Title {
+	font-size: 1.65rem;
+	text-align: left;
+	margin-left: 25px;
+}
+
+.Package-BulletPts {
+	font-size: 0.85rem;
+}
+
+.Disclaimer-Title {
+	font-size: 1rem;
+	text-align: left;
+	margin-left: 26.5px;
+}
+
+.Disclaimer-Note {
+	font-size: 0.65rem;
+	text-align: left;
+	margin-left: 28px;
+	margin-right: 15px;
+}
