@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact';
 import './Footer.css';
+import ModalPage from '../Modal/Modal';
 
 export default function Footer() {
 	return (
@@ -13,20 +14,14 @@ export default function Footer() {
 							<p>Here you can use rows and columns here to organize your footer content.</p>
 						</MDBCol>
 						<MDBCol md="6">
-							<h5 className="title">Links</h5>
 							<ul className="Footer-UL-Style">
-								<li className="list-unstyled">
-									<a href="#!">Link 1</a>
-								</li>
-								<li className="list-unstyled">
-									<a href="#!">Link 2</a>
-								</li>
-								<li className="list-unstyled">
-									<a href="#!">Link 3</a>
-								</li>
-								<li className="list-unstyled">
-									<a href="#!">Link 4</a>
-								</li>
+								{/* Admin login page link */}
+								<ModalPage>
+								{/* <li className="list-unstyled">
+									<a href="/">Login</a>
+								</li> */}
+								</ModalPage>
+								
 							</ul>
 						</MDBCol>
 					</MDBRow>
