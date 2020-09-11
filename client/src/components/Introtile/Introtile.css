@@ -1,7 +1,6 @@
 .Introtile-Full-Container {
-	background: red;
-	width: 100%;
-	height: 101vh; /*? 93vh = 100vh with navbar */
+	background: #080808;
+	position: relative;
 }
 
 .Introtile-IMG-Container {
@@ -9,9 +8,9 @@
 }
 
 .Introtile-CarBKG {
-	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
+	height: 70vh;
 }
 
 .Introtile-MDB-Container {
@@ -43,15 +42,21 @@
 	font-weight: 500;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1120px) {
+	.Introtile-Full-Container {
+		background: #080808;
+		height: 50%;
+	}
+
 	.Introtile-IMG-Container {
 		overflow: hidden;
 	}
 
 	.Introtile-CarBKG {
-		background-size: 100% 100%;
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
 		width: 100%;
+		height: 100%;
 	}
 }
