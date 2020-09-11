@@ -1,5 +1,99 @@
+/**------------ Variable Roots for CSS ------------ **/
+/*!------------ Header Formatting ------------ !*/
+:root {
+	--header-height: 3rem;
+	--font-semi: 600;
+}
+
+/*!------------ Stylization Colors ------------ !*/
+:root {
+	/*!----- Text Colors -----!*/
+	--first-text: #ffffff;
+	--second-text: black;
+	/*!----- Background Colors -----!*/
+	--fist-bkg: #222629;
+	--second-bkg: #474b4f;
+	/*!----- Additional Colors -----!*/
+	--addititional-color-first: #edeae5;
+	--addititional-color-first: #ffffff;
+	--addititional-color-first: #eeebe6;
+}
+
+/*!----- Text Formatting and Size -----!*/
+:root {
+	--body-font: 'Muli', sans-serif;
+	--big-font-size: 2rem;
+	--h2-font-size: 1.25rem;
+	--normal-font-size: 0.938rem;
+}
+
+/*!----- Text Formatting and Size Media Query @ Break Point -----!*/
+@media screen and (min-width: 768px) {
+	:root {
+		--big-font-size: 3.5rem;
+		--h2-font-size: 2rem;
+		--normal-font-size: 1rem;
+	}
+}
+
+/*!----- Margin Formatting -----!*/
+:root {
+	--mb-1: 0.5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+	--mb-5: 2.5rem;
+	--mb-6: 3rem;
+}
+
+/*!----- Z Index Formatting -----!*/
+:root {
+	--z-back: -10;
+	--z-normal: 1;
+	--z-tooltip: 10;
+	--z-fixed: 50;
+}
+
 .Pricing-Full-Container {
-	background-color: blue;
+	background-color: #b40421;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+}
+
+.Pricing-Section-Title {
+	position: relative;
+	font-size: var(--h2-font-size);
+	color: #f5f5f5;
+	margin-top: var(--mb-2);
+	margin-bottom: var(--mb-4);
+	text-align: center;
+	font-weight: 500;
+}
+.Pricing-Section-Title::after {
+	position: absolute;
+	content: '';
+	width: 64px;
+	height: 0.18rem;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 2rem;
+	background-color: var(--first-color);
+}
+
+.Pricing-Section {
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+	.Pricing-Full-Container {
+		height: 100%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.Pricing-Full-Container {
+		height: 100%;
+	}
 }
