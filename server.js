@@ -1,28 +1,27 @@
-
 const express = require('express');
 const path = require('path');
-const routes = require("./routes");
-const passport = require("./config/passport");
+const routes = require('./routes');
+const passport = require('./config/passport');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const config = require("./config/extra-config");
-const session = require('express-session'); 
+const config = require('./config/extra-config');
+const session = require('express-session');
 const authCheck = require('./config/middleware/authenticationStatus.js');
 const app = express();
-const cors = require("cors"); //needed to disable sendgrid security
-const sgMail = require("@sendgrid/mail"); //sendgrid library to send emails
-require("dotenv").config();
+const cors = require('cors'); //needed to disable sendgrid security
+const sgMail = require('@sendgrid/mail'); //sendgrid library to send emails
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
 
 // Enable CORS from client-side
-app.use(function(req, res, next) {  
-	res.header("Access-Control-Allow-Origin", "*");
+app.use(function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials");
-	res.header("Access-Control-Allow-Credentials", "true");
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials');
+	res.header('Access-Control-Allow-Credentials', 'true');
 	next();
-  });
+});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -33,8 +32,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
 }
 
 app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
@@ -51,34 +50,34 @@ app.use(cors());
 
 // Welcome page of the express server:
 
-app.get("/", (req, res) => {
-  //Get Variables from query string in the search bar
-  const { sender, topic, text, name, phone, vehicle } = req.query;
-  //Sendgrid Data Requirements
-  const msg = {
-    to: sender, //recipient
-    from: "jonathan213kim@gmail.com",
-    subject: topic,
-    text: `
+app.get('/', (req, res) => {
+	//Get Variables from query string in the search bar
+	const { sender, topic, text, name, phone, vehicle } = req.query;
+	//Sendgrid Data Requirements
+	const msg = {
+		to: sender, //recipient
+		from: 'jonathan213kim@gmail.com',
+		subject: topic,
+		text: `
 	From:\n
 	Name: ${name}\n
 	Email: ${sender}\n
 	Phone: ${phone}\n
 	Vehicle: ${vehicle}\n
 	Main Message: ${text}.`,
-  };
+	};
 
-  //Send Email
-  sgMail.send(msg).then(
-    () => {},
-    (error) => {
-      console.error(error);
+	//Send Email
+	sgMail.send(msg).then(
+		() => {},
+		(error) => {
+			console.error(error);
 
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
-  );
+			if (error.response) {
+				console.error(error.response.body);
+			}
+		}
+	);
 });
 
 app.use(routes);
@@ -88,10 +87,10 @@ app.use(routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+	console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
