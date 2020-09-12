@@ -15,8 +15,8 @@ const quoteSchema = new Schema({
 	carlocation: { type: String, required: true },
 	servicerequested: { type: String, required: true },
 	datesent: { type: Date, default: Date.now },
-	daterequested: { type: String, required: true },
-	timerequested: { type: String, required: true },
+	datereq: { type: String, required: true },
+	timereq: { type: String, required: true },
 	iscompleted: { type: Boolean, default: false },
 });
 

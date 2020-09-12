@@ -1,6 +1,8 @@
 import React from 'react';
 import { MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
+import API from '../../utils/API';
+
 class BookingServiceForm extends React.Component {
 	state = {
 		name: '',
@@ -20,17 +22,29 @@ class BookingServiceForm extends React.Component {
 		iscompleted: false,
 	};
 
+	canBeSubmitted() {
+		const { name, phone, email, address1, city, state, zip, makemodel, carlocation, datereq, timereq } = this.state;
+		return name.length > 0 && phone.length > 0 && email.length > 0 && address1.length > 0 && city.length > 0 && state.length > 0 && zip.length > 0 && makemodel.length > 0 && carlocation.length > 0 && datereq.length > 0 && timereq.length > 0;
+	}
+
 	submitHandler = (event) => {
 		event.preventDefault();
 		event.target.className += ' was-validated';
+		API.saveQuote(this.state)
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
+
+		this.props.handleModalChange(); //* closes the modal once submitted.
+		this.props.handleModalChange2(); //* should open the second modal success once submitted
 	};
 
 	changeHandler = (event) => {
 		this.setState({ [event.target.name]: event.target.value });
-		console.log(this.state);
 	};
 
 	render() {
+		const isEnabled = this.canBeSubmitted();
+		console.log(this.props);
 		return (
 			<div>
 				<form className="needs-validation" onSubmit={this.submitHandler} noValidate>
@@ -215,7 +229,7 @@ class BookingServiceForm extends React.Component {
 						</MDBCol>
 					</MDBRow>
 
-					<MDBBtn color="primary" type="submit">
+					<MDBBtn color="primary" type="submit" disabled={!isEnabled}>
 						Request Service Quote
 					</MDBBtn>
 				</form>
