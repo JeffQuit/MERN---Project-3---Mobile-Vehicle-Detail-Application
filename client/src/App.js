@@ -40,6 +40,7 @@ function App() {
 					<Switch>
 						<Route exact path="/" component={Main}   />
 
+						<Redirect from='/' to="/admin/login" />
 						<Route exact path="/admin/login" component={Admin}  
 							authenticate={authenticate}
 							deAuth={deAuth}

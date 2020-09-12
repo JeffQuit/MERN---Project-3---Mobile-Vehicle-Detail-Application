@@ -1,7 +1,7 @@
 const router = require('express').Router();
-// const router = express.Router();
+const passport = require("passport");
 const appointment_controller = require('../../controllers/appointmentController');
-const admin_controller = require('../../controllers/adminController');
+const admin_controller = require('../../controllers/quoteController');
 
 router
     .route('/logout') 

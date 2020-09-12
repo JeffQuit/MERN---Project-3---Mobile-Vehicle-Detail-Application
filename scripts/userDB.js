@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../models/bookings");
 
 // This file empties the Books collection and inserts the books below
 mongoose.connect(
@@ -9,45 +9,49 @@ mongoose.connect(
 const appointmentSeed = [
     {
       name: "John Doe",
-      services: "basic",
       location: "the mall",
-      // date: { type: Date, default: Date.now },
+      date: { type: Date, default: Date.now },
       time: "8:00 am",
       price: "$356",
+      phone: "2242452",
+      email: "asgags@afsvasg.com",
       complete: false 
     },
     {
       name: "boe Doe",
-      services: "basic",
       location: "the mall",
-      // date: { type: Date, default: Date.now },
+      date: { type: Date, default: Date.now },
       time: "10:00 am",
       price: "$356",
+      phone: "2242452",
+      email: "asgags@afsvasg.com",
       complete: false 
     },
     {
       name: "HAm Doe",
-      services: "basic",
       location: "the mall",
-      // date: { type: Date, default: Date.now },
+      date: { type: Date, default: Date.now },
       time: "11:00 am",
-      price: "$356",
+      price: "$356",     
+       phone: "2242452",
+       email: "asgags@afsvasg.com",
       complete: false 
     },
     {
       name: "BOO Doe",
-      services: "basic",
       location: "the mall",
-      // date: { type: Date, default: Date.now },
+      date: { type: Date, default: Date.now },
       time: "12:00 am",
       price: "$356",
+      phone: "2242452",
+      email: "asgags@afsvasg.com",
       complete: false 
     }
   ]
 
-    db.Bookings
+    db
   .remove({})
-  .then(() => db.Bookings.collection.insertMany(appointmentSeed))
+  .then(() => db.collection.insertMany(appointmentSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

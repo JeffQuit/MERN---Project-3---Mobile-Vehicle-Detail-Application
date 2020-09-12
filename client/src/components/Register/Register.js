@@ -1,38 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { MDBContainer,  MDBBtn,  MDBInput } from 'mdbreact';
-import {Link, Redirect} from "react-router-dom";
-// import LoginAPI from "../../utils/LoginAPI.js";
 import axios from "axios"
 
-
-//This page will work along with PassPort to provide secure Login Functionality
 
 export default function Register() {
 
     const [admin, setAdmin]= useState('');
-    const [password, setPassword] = useState('')
-
-    
-    useEffect(() => {
-        signUpUser()
-      }, [])
+    const [password, setPassword] = useState('');
     
       function signUpUser(userData) {
         console.log(userData)
         axios.post("/api/admin/signup", 
-           userData
+          { username: userData.username,
+          password: userData.password}
         ).then(function (data) {
-
             console.log("data stuff", data);
             if (data.duplicateUser) {
                 // Replace with Modal
                 alert("Sorry, that username has been taken");
             } else if (data.data.success) {
                 console.log("yay!")
-                // this.props.authenticate();
-                // this.setState({
-                //     redirectToReferrer: true
-                // });
             }
         }).catch(function (err) {
             console.log(err);
@@ -46,9 +33,8 @@ export default function Register() {
     function passwordChange(event) {
         setPassword({ password: event.target.value })
       };
-      //passport functionality for checking the login
-       
-      function handleFormSubmit(event) {
+
+    function handleFormSubmit(event) {
         event.preventDefault();	
         const usernameInput = admin.admin;
         const passwordInput = password.password;

@@ -7,7 +7,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const config = require("./config/extra-config");
 const session = require('express-session'); 
-
+const authCheck = require('./config/middleware/authenticationStatus.js');
 const app = express();
 const cors = require("cors"); //needed to disable sendgrid security
 const sgMail = require("@sendgrid/mail"); //sendgrid library to send emails
@@ -23,21 +23,19 @@ app.use(function(req, res, next) {
 	res.header("Access-Control-Allow-Credentials", "true");
 	next();
   });
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// app.use(require('serve-static')(__dirname + '/../../public'));
-const authCheck = require('./config/middleware/authenticationStatus.js');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
