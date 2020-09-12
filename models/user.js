@@ -18,27 +18,26 @@ const userSchema = mongoose.Schema({
 });
 
   // generating a hash
-userSchema.methods.generateHash = (password) =>{
+userSchema.methods.generateHash = function (password) {
     const saltRounds = 10;
-      bcrypt.genSalt(saltRounds, function(err, salt){
-        bcrypt.hash(password, saltRounds, function(err, hash) {
-            console.log(hash)
-             return hash
-        })
-      })
-}
-
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hash = bcrypt.hashSync(password, salt, null);
+// Store hash in your password DB.
+    console.log(hash)
+    return hash
+};
 
 // checking if password is valid
-userSchema.methods.validPassword = (password) => {
+userSchema.methods.verifyPassword = function(password){
     // Load hash from your password DB.
-    bcrypt.compareSync(password, hash, function(err, result) {
-    result == true;
-});
- 
-}
+    const hash = this.password
+    // console.log(`username password`, this)
 
-const User = mongoose.model("Users", userSchema);
+    // console.log(`password entered by user`, password)
+    return bcrypt.compareSync(password, hash);
+};
+
+const User = mongoose.model("users", userSchema);
 
 // create the model for users and expose it to our app
 module.exports = User;

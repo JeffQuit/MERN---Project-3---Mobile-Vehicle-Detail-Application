@@ -1,43 +1,34 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { MDBContainer,  MDBBtn,  MDBInput } from 'mdbreact';
-import {Link, Redirect} from "react-router-dom";
-import LoginAPI from "../../utils/LoginAPI.js";
+import { Redirect} from "react-router-dom";
 import axios from "axios"
-
 
 //This page will work along with PassPort to provide secure Login Functionality
 
 export default function Login() {
 
     const [admin, setAdmin]= useState('');
-    const [password, setPassword] = useState('')
-    const [loggedIn, setLogin] = useState(false);
-    
-    useEffect(() => {
-      loginUser()
-    }, [])
+    const [password, setPassword] = useState('');
+    const [loggedIn, setLogin] = useState(true);
+    const [authenticated, setAuth] = useState(false);
 
     function loginUser(user) {
       console.log("Im hit boy")
         // LoginAPI.login(user)
         axios.post('/api/admin/login', user)
         .then(function (data) {
-          console.log(data);
-          // if (data.data.success) {
-          //   console.log("hell yeah")
-            // user.authenticate();
-            // setLogin({
-            //   loggedIn: true
-            // });
-          // } else {
-          //   alert(data.data.message);
-          // }}).catch(function (err) {
-          //   console.log(err);
-          // });
-        
-      
-        })
-      };
+          console.log(data.data);
+          if (data.data.success) {
+            console.log("hell yeah")
+            setLogin()
+            // console.log(authenticated)
+            redirect();  
+          } else {
+            alert(data.data.message);
+          }}).catch(function (err) {
+            console.log(err);
+          });
+    };
   
     function userNameChange(event) {
         setAdmin({ admin: event.target.value })
@@ -61,23 +52,19 @@ export default function Login() {
           return;
         }
         // If we have an email and password we run the loginUser function and clear the form
-        console.log(objSubmit)
-        setLogin({
-          loggedIn: true
-        })
-        console.log(loggedIn)
+        console.log(`this is the user and password entered`,objSubmit)
         loginUser(objSubmit);
-      
       };
-      // const { from } = location.state || { from: { pathname: '/' } };
-      // const { redirectToReferrer } =  loggedIn;
   
       function redirect() {
         if (loggedIn) {
+          console.log(`refirect trying to hit`)
         return (
-          <Redirect to={"/admin"} />
-        )
+          <Redirect to='/admin/login'/>
+        )} else {
+          alert(`Must be authenticated`)
       }}
+
     return (
 		<div className="Login-Full-Container ">
 			<MDBContainer>

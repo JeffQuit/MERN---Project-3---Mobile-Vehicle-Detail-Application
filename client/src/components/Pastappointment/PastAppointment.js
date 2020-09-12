@@ -1,5 +1,5 @@
 //This page will display the compenent for the all of the past appointments. 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { MDBContainer, MDBBtn } from 'mdbreact';
 import './PastAppointment.css';
 import TablePage from "../Table/Table.js"

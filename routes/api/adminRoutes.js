@@ -1,7 +1,13 @@
 const router = require('express').Router();
+<<<<<<< HEAD
+const passport = require("passport");
+const appointment_controller = require('../../controllers/appointmentController');
+const admin_controller = require('../../controllers/quoteController');
+=======
 // const router = express.Router();
 const appointment_controller = require('../../controllers/quoteController');
 const admin_controller = require('../../controllers/adminController');
+>>>>>>> master
 
 router.route('/logout').get(admin_controller.signOutUser);
 
