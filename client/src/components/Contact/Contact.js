@@ -29,17 +29,8 @@ export default class Contact extends Component {
     const { email } = this.state;
     fetch(
       `http://localhost:3002/api/mail/send/?sender=${email.sender}&vehicle=${email.vehicle}&topic=${email.subject}&phone=${email.phone}&text=${email.text}&name=${email.name}`
-    ) //query string url
-      .catch((err) => console.error(err));
+    ).catch((err) => console.error(err));
   };
-  //   handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     const { email } = this.state;
-
-  //     axios.get(
-  //       `http://localhost:3002/api/mail/send/?sender=${email.sender}&vehicle=${email.vehicle}&topic=${email.subject}&phone=${email.phone}&text=${email.text}&name=${email.name}`
-  //     );
-  //   };
   render() {
     const { email } = this.state;
     return (
