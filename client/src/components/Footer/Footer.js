@@ -5,7 +5,9 @@ import ModalPage from '../Modal/Modal';
 
 export default function Footer({ authorize, setAuthorize }) {
 	return (
-		<MDBFooter color="black" className="page-footer font-small pt-4  ">
+
+		<MDBFooter color="elegant-color-dark" className="page-footer font-small pt-4  ">
+
 			<MDBContainer>
 				<MDBContainer fluid className="text-center text-md-left ">
 					<MDBRow>
@@ -19,6 +21,7 @@ export default function Footer({ authorize, setAuthorize }) {
 								<ModalPage setAuthorize={setAuthorize} authorize={authorize}>
 								</ModalPage>
 								
+
 							</ul>
 						</MDBCol>
 					</MDBRow>
@@ -26,7 +29,8 @@ export default function Footer({ authorize, setAuthorize }) {
 			</MDBContainer>
 			<div className="footer-copyright text-center py-3">
 				<MDBContainer fluid>
-					&copy; {new Date().getFullYear()} Copyright: <a href=""> Gerra's Automotive Detailing service</a>
+					&copy; {new Date().getFullYear()} Copyright: <a href=""> Gerra's Automotive Detailing Service</a>
+
 				</MDBContainer>
 			</div>
 		</MDBFooter>
