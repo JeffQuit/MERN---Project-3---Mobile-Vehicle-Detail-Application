@@ -10,13 +10,13 @@ const mongoose = require('mongoose');
 
 const app = express();
 const cors = require('cors'); //needed to disable sendgrid security
-const sgMail = require('@sendgrid/mail'); //sendgrid library to send emails
+// const sgMail = require('@sendgrid/mail'); //sendgrid library to send emailsstat
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3002;
-/*
+
 // Enable CORS from client-side
-console.log('kill me');
+
 app.use(function (req, res, next) {
 	console.log(req);
 	console.log(res);
@@ -26,7 +26,7 @@ app.use(function (req, res, next) {
 	res.header('Access-Control-Allow-Credentials', 'true');
 	next();
 });
-*/
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,8 +34,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 }
-/*
-// app.use(require('serve-static')(__dirname + '/../../public'));
+
 const authCheck = require('./config/middleware/authenticationStatus.js');
 
 app.use(logger('dev'));
@@ -48,45 +47,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(authCheck);
 
-//require('./config/databaseImplementation');
-
 // Define API routes here
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //utilize Cors so the browser doesn't restrict data, without it Sendgrid will not send!
 app.use(cors());
-*/
-// Welcome page of the express server:
-/*
-app.get('/', (req, res) => {
-	//Get Variables from query string in the search bar
-	const { sender, topic, text, name, phone, vehicle } = req.query;
-	//Sendgrid Data Requirements
-	const msg = {
-		to: sender, //recipient
-		from: 'jonathan213kim@gmail.com',
-		subject: topic,
-		text: `
-	From:\n
-	Name: ${name}\n
-	Email: ${sender}\n
-	Phone: ${phone}\n
-	Vehicle: ${vehicle}\n
-	Main Message: ${text}.`,
-	};
 
-	//Send Email
-	sgMail.send(msg).then(
-		() => {},
-		(error) => {
-			console.error(error);
-
-			if (error.response) {
-				console.error(error.response.body);
-			}
-		}
-	);
-});
-*/
 app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/GerrasDetailingUser');

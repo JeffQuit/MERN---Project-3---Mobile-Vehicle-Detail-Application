@@ -17,7 +17,7 @@ class NavbarPage extends Component {
 				<MDBNavbar color="elegant-color-dark" dark expand="md" className="sticky-top">
 					<MDBContainer>
 						<MDBNavbarBrand>
-							<strong className="white-text">Garrett's Mobile Auto Detail</strong>
+							<strong className="white-text">Gerra's Auto Detailing Service</strong>
 						</MDBNavbarBrand>
 						<MDBNavbarToggler onClick={this.toggleCollapse} />
 						<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
