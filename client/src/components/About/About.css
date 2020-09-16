@@ -1,5 +1,67 @@
+
 .About-Full-Container {
-	background-color: yellow;
+	background-color: #212121;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+	row-gap: 1rem;
+	z-index: var(--z-back);
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+
+
+/**------------ Variable Roots for CSS ------------ **/
+/*!------------ Header Formatting ------------ !*/
+:root {
+	--header-height: 3rem;
+	--font-semi: 600;
+}
+
+/*!------------ Stylization Colors ------------ !*/
+:root {
+	/*!----- Text Colors -----!*/
+	--first-text: #ffffff;
+	--second-text: black;
+	/*!----- Background Colors -----!*/
+	--fist-bkg: #222629;
+	--second-bkg: #474b4f;
+	/*!----- Additional Colors -----!*/
+	--addititional-color-first: #edeae5;
+	--addititional-color-first: #ffffff;
+	--addititional-color-first: #eeebe6;
+}
+
+/*!----- Text Formatting and Size -----!*/
+:root {
+	--body-font: 'Muli', sans-serif;
+	--big-font-size: 2rem;
+	--h2-font-size: 1.25rem;
+	--normal-font-size: 0.938rem;
+}
+
+/*!----- Text Formatting and Size Media Query @ Break Point -----!*/
+@media screen and (min-width: 768px) {
+	:root {
+		--big-font-size: 3.5rem;
+		--h2-font-size: 2rem;
+		--normal-font-size: 1rem;
+	}
+}
+
+/*!----- Margin Formatting -----!*/
+:root {
+	--mb-1: 0.5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+	--mb-5: 2.5rem;
+	--mb-6: 3rem;
+}
+
+/*!----- Z Index Formatting -----!*/
+:root {
+	--z-back: -10;
+	--z-normal: 1;
+	--z-tooltip: 10;
+	--z-fixed: 50;
 }

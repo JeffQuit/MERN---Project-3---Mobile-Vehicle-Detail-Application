@@ -1,57 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {Link, Redirect} from "react-router-dom";
 
 //! Import Pages:
 import NavbarPage from './components/Navbar/Navbarmenu';
 import Main from './pages/Main';
 import Admin from './pages/Admin';
 import NoMatch from "./pages/NoMatch";
-import LoginAPI from "./utils/LoginAPI.js"
 import Footer from './components/Footer/Footer';
 import Register from "./components/Register/Register"
+import GuardedRoute from "./components/GuardedRoute"
 
 //! Imports of CSS Files
 import './App.css';
 
-function App() {
-	const [authenticated, setAuthenticated] = useState(false);
-	// const [deAuth, setDeAuth] = useState();
+import { UserContext } from './components/UserContext';
 
-	function authenticate() {
-		setAuthenticated(true);
-	}
-	function deAuth() {
-		setAuthenticated(false)
-	}
-	function logout() {
-		LoginAPI.logout()
-		  .then(function (data) {
-			deAuth();
-			window.location.reload();
-		  }.catch(function (err) {
-			console.log(err);
-		  }))};
+function App() {
+
+	const [authorize, setAuthorize] = useState(false);
+	console.log('user context is', authorize)
 
 	return (
 		<div className="App">
 			<Router>
+				
 				<NavbarPage />
+					
 					<Switch>
-						<Route exact path="/" component={Main}   />
+						<UserContext.Provider value={authorize}>
+							
+							<Route exact path="/" component={Main}   />
+							
+							<GuardedRoute path='/admin/login' component={Admin} auth={ authorize } />
 
-						<Redirect from='/' to="/admin/login" />
-						<Route exact path="/admin/login" component={Admin}  
-							authenticate={authenticate}
-							deAuth={deAuth}
-							authenticated={authenticated}
-							logout={logout} 
-							/>
-						<Route exact path="/signup" component={Register}   />
-
+							<GuardedRoute exact path="/signup" component={Register} auth={ authorize }  />
+						
+						</UserContext.Provider>
+						
 						<NoMatch />
 					</Switch>
-				<Footer />
+
+				<Footer setAuthorize={setAuthorize} authorize={authorize} />
+			
 			</Router>
 		</div>
 	);

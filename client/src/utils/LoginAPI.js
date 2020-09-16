@@ -3,8 +3,15 @@ import axios from "axios";
 export default {
     login: function(user) {
         console.log("I was hit loginAPI")
-        return axios.post('/api/admin/login', user)
-    },
+        return axios.post('/api/admin/login', function(req, res) {
+            if (req.user) {
+                res.render('admin/login', { user: req.user });
+            } else {
+                res.redirect('/');
+            }
+        }
+        )},
+
     logout: function() {
         return axios.get('/api/admin/logout')
     },

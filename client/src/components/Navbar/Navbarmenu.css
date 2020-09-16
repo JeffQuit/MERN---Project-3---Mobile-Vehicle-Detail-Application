@@ -1,0 +1,8 @@
+#HashLinkComponent {
+	text-decoration: none;
+	color: white;
+}
+
+#HashLinkComponent:hover {
+	color: #ef233c;
+}

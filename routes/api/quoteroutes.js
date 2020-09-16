@@ -1,6 +1,8 @@
-// const router = require('express').Router();
-// const quotesController = require('../../controllers/quoteController');
 
-// router.route('/').post(quotesController.create);
+const router = require('express').Router();
+const quoteController = require('../../controllers/quoteController');
 
-// module.exports = router;
+router.route('/').post(quoteController.create);
+
+
+module.exports = router;
