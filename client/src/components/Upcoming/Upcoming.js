@@ -1,7 +1,7 @@
 //This page will display the compenent for the all of the upcoming appointments. 
 import React from 'react';
 import { MDBContainer } from 'mdbreact';
-import TablePage from "../Table/Table.js"
+import TablePage from "../Table/upcomingTable.js"
 import './Upcoming.css';
 // import API from "../utils/API.js"
 

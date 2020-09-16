@@ -23,7 +23,7 @@ userSchema.methods.generateHash = function (password) {
     const salt = bcrypt.genSaltSync(saltRounds);
     const hash = bcrypt.hashSync(password, salt, null);
 // Store hash in your password DB.
-    console.log(hash)
+    // console.log(hash)
     return hash
 };
 

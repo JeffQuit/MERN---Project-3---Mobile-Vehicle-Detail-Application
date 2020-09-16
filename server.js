@@ -9,12 +9,16 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 
 const app = express();
+
 const cors = require("cors");
 require("dotenv").config();
+
 
 const PORT = process.env.PORT || 3002;
 
 // Enable CORS from client-side
+
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
@@ -33,6 +37,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 
 const authCheck = require("./config/middleware/authenticationStatus.js");
 

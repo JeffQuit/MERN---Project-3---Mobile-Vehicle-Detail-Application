@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import {Link} from  "react-router-dom";
-
 import { MDBContainer,  MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import Login from "../Login/Login.js"
 class ModalPage extends Component {
@@ -22,7 +20,7 @@ render() {
         <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
           <MDBModalHeader toggle={this.toggle(14)}>Login</MDBModalHeader>
           <MDBModalBody>
-            <Login/>
+            <Login setAuthorize={this.props.setAuthorize} authorize={this.props.authorize} handle={this.toggle(14)} />
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn className="heyy" color="red" onClick={this.toggle(14)}>Close</MDBBtn>

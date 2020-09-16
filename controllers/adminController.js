@@ -45,7 +45,7 @@ exports.loginUser = (req, res, next) => {
 			});
 		}
 
-		console.log(userData, 'this is the userData in users_api.js');
+		// console.log(userData, 'this is the userData in users_api.js');
 		if (userData.message == 'Invalid Password' || userData.message == 'User not Found') {
 			return res.json({
 				success: false,
@@ -78,7 +78,7 @@ exports.signUpUser = function (req, res) {
 			newUser.username = req.body.username;
 
 			newUser.password = newUser.generateHash(req.body.password);
-			console.log('this is our new use pre-save', newUser);
+			// console.log('this is our new use pre-save', newUser);
 			// save the user
 
 			newUser

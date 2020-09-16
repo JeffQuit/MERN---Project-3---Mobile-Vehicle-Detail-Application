@@ -1,27 +1,23 @@
 import React, {useState} from 'react';
 import { MDBContainer,  MDBBtn,  MDBInput } from 'mdbreact';
-import { Redirect} from "react-router-dom";
 import axios from "axios"
-
+import { useHistory } from "react-router-dom";
+import { authorize } from 'passport';
 //This page will work along with PassPort to provide secure Login Functionality
 
-export default function Login() {
+export default function Login({ setAuthorize }) {
 
     const [admin, setAdmin]= useState('');
     const [password, setPassword] = useState('');
-    const [loggedIn, setLogin] = useState(true);
-    const [authenticated, setAuth] = useState(false);
 
     function loginUser(user) {
       console.log("Im hit boy")
-        // LoginAPI.login(user)
         axios.post('/api/admin/login', user)
         .then(function (data) {
-          console.log(data.data);
+          // console.log(data.data);
           if (data.data.success) {
-            console.log("hell yeah")
-            setLogin()
-            // console.log(authenticated)
+            // console.log("hell yeah")
+            setAuthorize(true)
             redirect();  
           } else {
             alert(data.data.message);
@@ -29,7 +25,7 @@ export default function Login() {
             console.log(err);
           });
     };
-  
+
     function userNameChange(event) {
         setAdmin({ admin: event.target.value })
       };    
@@ -52,51 +48,33 @@ export default function Login() {
           return;
         }
         // If we have an email and password we run the loginUser function and clear the form
-        console.log(`this is the user and password entered`,objSubmit)
+        // console.log(`this is the user and password entered`,objSubmit)
         loginUser(objSubmit);
       };
-  
+
+      //redirect function for logging into the admin page.
+      let history = useHistory()
+
       function redirect() {
-        if (loggedIn) {
-          console.log(`refirect trying to hit`)
-        return (
-          <Redirect to='/admin/login'/>
+        if (authorize) {
+          // console.log(`redirect trying to hit`)
+        return (  
+          history.push('/admin/login')
         )} else {
           alert(`Must be authenticated`)
-      }}
-
+      }};
+    
     return (
 		<div className="Login-Full-Container ">
 			<MDBContainer>
 				<form onSubmit={handleFormSubmit} >
 					<p className="h4 text-center py-4">Gerra's Login</p>
-                        <MDBInput 
-                        label="Email" 
-                        outline
-                        onChange={userNameChange}
-                        name={admin}
-                        id="username-input" 
-                        type="text" 
-                        />
-                        <MDBInput 
-                        label="Password"
-                        outline 
-
-                        name={password}
-                        onChange={passwordChange}
-                        id="password-input" 
-                        type="current-password" 
-                         />
-						<div className="text-center py-4 mt-3">
-                            <MDBBtn 
-                            className="btn btn-outline-black" 
-                            type="submit"
-                          
-                            >
-								Login
-							</MDBBtn>
-						</div>
-			    </form>
+            <MDBInput label="Email" outline onChange={userNameChange} name={admin} id="username-input" type="text" />
+                <MDBInput label="Password" outline name={password} onChange={passwordChange} id="password-input" type="current-password" />
+						      <div className="text-center py-4 mt-3">
+                    <MDBBtn className="btn btn-outline-black" type="submit">Login</MDBBtn>
+						      </div>
+			  </form>
 			</MDBContainer>
 		</div>
 	);
