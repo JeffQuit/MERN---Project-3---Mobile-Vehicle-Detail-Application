@@ -48,7 +48,7 @@ export default function Socialmedia() {
 					<MDBCol>
 						<MDBCard className="mx-auto" style={{ width: '20rem' }}>
 							<a href="https://www.instagram.com/p/BY6aa9CHW5F/" target="_blank" rel="noopener noreferrer">
-								<MDBCardImage className="img-fluid" src="/Assets/Images/img2.jpg" waves />
+								<MDBCardImage className="img-fluid" src="/Assets/Images/Img2.jpg" waves />
 							</a>
 							<MDBCardBody>
 								{/* <MDBCardTitle>Title</MDBCardTitle> */}
@@ -73,7 +73,7 @@ export default function Socialmedia() {
 					<MDBCol>
 						<MDBCard className="mx-auto" style={{ width: '20rem' }}>
 							<a href="https://www.instagram.com/p/B0KSDpgH0Ph/" target="_blank" rel="noopener noreferrer">
-								<MDBCardImage className="img-fluid" src="/Assets/Images/img1.jpg" waves />
+								<MDBCardImage className="img-fluid" src="/Assets/Images/Img1.jpg" waves />
 							</a>
 							<MDBCardBody>
 								{/* <MDBCardTitle>Title</MDBCardTitle> */}
