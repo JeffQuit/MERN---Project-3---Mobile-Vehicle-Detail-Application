@@ -9,9 +9,9 @@ export default {
   update: function(id) {
     return axios.get("/api/admin/bookings" + id);
   },
-  // Deletes the book with the given id
-  // remove: function(id) {
-  //   return axios.delete("/api/admin/bookings" + id);
-  // },
+  // updates the book with the given id
+  remove: function(id) {
+    return axios.put("/api/admin/bookings" + id);
+  },
   
 };

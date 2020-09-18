@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { MDBDataTableV5 } from 'mdbreact';
-import appointmentAPI from "../../utils/appointmentAPI.js"
+import { MDBDataTableV5, MDBBtn } from 'mdbreact';
+import appointmentAPI from "../../utils/appointmentAPI.js";
+import { Link } from "react-router-dom";
+import Register from "../Register/Register"
 
 //This page will display the compenent for the all of the upcoming appointments. 
-
 
 //Use a card and add a table of all the upcoming appointments. 
 // Create a button to change the state of completed to false. 
@@ -11,23 +12,39 @@ import appointmentAPI from "../../utils/appointmentAPI.js"
 export default function Basic() {
 
         // Setting our component's initial state
-        const [bookings, setBookings] = useState({})
         const [rows, setRows] = useState([])
         const [datatable, setDatatable] = useState({})
-          
+        const [logged, setLogged] = useState(true)
         // Load all books and store them with setBooks
         useEffect(() => {
-            loadBookings()
-        }, [])
-        
-        //create a function to load the upcoming appointments (appointment completed = false)
+            loadBookings();
+        }, []);
+
+        //The setRows function sets the rows with the data returned from db based on 
+        // iscompleted = true && if the date requested is less than the current date
         // Loads all bookings and sets them to bookings
         function loadBookings() {
         appointmentAPI.findAll()
           .then(res => {
-            // console.log(res.data.iscompleted)
-            //  if(res.data.iscompleted === true) {
-              setDatatable({columns: [
+             setRows(() => { 
+               for(let datas of res.data ) {
+                // Get today's date
+                let todaysDate = new Date();
+
+                let dateReq = datas.datereq;
+
+                dateReq = new Date(dateReq);
+
+                  if (datas.iscompleted = true && dateReq < todaysDate) {
+                    datas.iscompleted = true;
+                    rows.push(datas)
+                    // console.log(datas.iscompleted)
+                  }
+               }
+            });
+            //sets the columns and rows with the data returned
+            setDatatable({
+              columns: [
                 {
                   label: 'Name',
                   field: 'name',
@@ -75,35 +92,19 @@ export default function Basic() {
                   field: 'email',
                   width: 270,
                 },
-              ], rows : res.data,
-            })
-            // .catch(err => console.log(err));
+              ], rows : rows
+            });
           });
-        }
-            
-
-        // Deletes a book from the database with a given id, then reloads bookings from the db
-        function deleteBook(id) {
-        appointmentAPI.remove(id)
-          .then(res => loadBookings())
-          .catch(err => console.log(err));
-        }
-
- console.log( datatable)
-    //I will have to set the rows here to the data from the data tables 
-    //Create a button that will only appear if the completed status is false.
-
-//Add Onclick button to hande the Change
+        };
+        // console.log( datatable)
   return(
       <div>
-    <MDBDataTableV5 
-        hover entriesOptions={[5, 20, 25]} 
-        entries={5} 
-        pagesAmount={4} 
-        data={datatable}
-    />
-    </div>
-
+            
+            <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={datatable}/>
+            
+            <Link component={Register} to={"/signup"}><MDBBtn className="btn btn-outline-black" type="submit">Register</MDBBtn></Link>    
+     
+      </div>
   ) 
   
 }

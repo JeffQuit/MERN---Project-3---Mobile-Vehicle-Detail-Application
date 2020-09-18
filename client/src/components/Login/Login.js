@@ -33,9 +33,9 @@ export default function Login({ setAuthorize }) {
     function passwordChange(event) {
         setPassword({ password: event.target.value })
       };
+
       //passport functionality for checking the login
-       
-      function handleFormSubmit(event) {
+    function handleFormSubmit(event) {
         event.preventDefault();	
         const usernameInput = admin.admin;
         const passwordInput = password.password;
@@ -53,7 +53,7 @@ export default function Login({ setAuthorize }) {
       };
 
       //redirect function for logging into the admin page.
-      let history = useHistory()
+      let history = useHistory();
 
       function redirect() {
         if (authorize) {

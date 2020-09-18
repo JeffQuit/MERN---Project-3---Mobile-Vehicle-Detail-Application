@@ -29,7 +29,7 @@ export default function Footer({ authorize, setAuthorize }) {
 			</MDBContainer>
 			<div className="footer-copyright text-center py-3">
 				<MDBContainer fluid>
-					&copy; {new Date().getFullYear()} Copyright: <a href=""> Gerra's Automotive Detailing Service</a>
+					&copy; {new Date().getFullYear()} Copyright: <p> Gerra's Automotive Detailing Service</p>
 
 				</MDBContainer>
 			</div>
