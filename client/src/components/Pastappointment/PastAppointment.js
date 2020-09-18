@@ -1,10 +1,8 @@
 //This page will display the compenent for the all of the past appointments. 
-import React, {useContext} from "react";
+import React from "react";
 import { MDBContainer, MDBBtn } from 'mdbreact';
 import './PastAppointment.css';
 import TablePage from "../Table/pastTable.js"
-
-import { UserContext } from '../../components/UserContext';
 import axios from "axios"
 //Find a way to import data from the mongoDB and display only the dates that have completed as true
 

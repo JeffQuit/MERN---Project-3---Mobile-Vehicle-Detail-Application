@@ -33,9 +33,9 @@ export default function Login({ setAuthorize }) {
     function passwordChange(event) {
         setPassword({ password: event.target.value })
       };
+
       //passport functionality for checking the login
-       
-      function handleFormSubmit(event) {
+    function handleFormSubmit(event) {
         event.preventDefault();	
         const usernameInput = admin.admin;
         const passwordInput = password.password;
