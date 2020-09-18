@@ -1,6 +1,8 @@
+
 import React, { Component } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBIcon, MDBInput } from 'mdbreact';
 import './Contact.css';
+
 
 export default class Contact extends Component {
 	state = {

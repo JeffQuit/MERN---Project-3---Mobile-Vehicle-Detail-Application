@@ -1,27 +1,28 @@
-//This page will display the compenent for the all of the past appointments.
-import React from 'react';
-import { MDBContainer } from 'mdbreact';
 
+//This page will display the compenent for the all of the past appointments. 
+import React from "react";
+import { MDBContainer } from 'mdbreact';
 import './PastAppointment.css';
-import TablePage from '../Table/pastTable.js';
-// import axios from "axios"
+import TablePage from "../Table/pastTable.js"
 
 //Find a way to import data from the mongoDB and display only the dates that have completed as true
 
-export default function PastAppointment({ setAuthorize }) {
-	// const [authorize, setAuthorize ] = useContext(UserContext)
+export default function PastAppointment() {
+	  
+    // const [authorize, setAuthorize ] = useContext(UserContext)
+		  
+//   function logout() {
+//     axios.get('/api/admin/logout')
+//       .then(function (data) {
+// 		setAuthorize(false)
+// 		redirect();
+//       }.bind(this)).catch(function (err) {
+//         console.log(err);
+//       });
+//   }
+      //redirect function for logging into the admin page.
+    //   let history = useHistory();
 
-	//   function logout() {
-	//     axios.get('/api/admin/logout')
-	//       .then(function (data) {
-	// 		setAuthorize(false)
-	// 		redirect();
-	//       }.bind(this)).catch(function (err) {
-	//         console.log(err);
-	//       });
-	//   }
-	//redirect function for logging into the admin page.
-	//   let history = useHistory();
 
 	//   function redirect() {
 	//     if (authorize) {
