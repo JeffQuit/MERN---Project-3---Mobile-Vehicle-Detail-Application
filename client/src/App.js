@@ -7,8 +7,8 @@ import Main from './pages/Main';
 import Admin from './pages/Admin';
 import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
-import Register from "./components/Register/Register"
 import GuardedRoute from "./components/GuardedRoute"
+// import Register from "./components/Register/Register"
 
 //! Imports of CSS Files
 import './App.css';
@@ -32,8 +32,6 @@ function App() {
 							<Route exact path="/" component={Main}   />
 							
 							<GuardedRoute path='/admin/login' component={Admin} auth={ authorize } />
-
-							<GuardedRoute exact path="/signup" component={Register} auth={ authorize }  />
 						
 						</UserContext.Provider>
 						

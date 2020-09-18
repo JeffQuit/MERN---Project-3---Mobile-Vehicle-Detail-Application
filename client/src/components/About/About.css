@@ -1,15 +1,3 @@
-
-.About-Full-Container {
-	background-color: #212121;
-	width: 100%;
-	height: 100%;
-	row-gap: 1rem;
-	z-index: var(--z-back);
-	padding-top: 3rem;
-	padding-bottom: 2rem;
-}
-
-
 /**------------ Variable Roots for CSS ------------ **/
 /*!------------ Header Formatting ------------ !*/
 :root {
@@ -64,4 +52,27 @@
 	--z-normal: 1;
 	--z-tooltip: 10;
 	--z-fixed: 50;
+}
+
+.About-Full-Container {
+	background-color: #212121;
+	width: 100%;
+	height: 100%;
+	row-gap: 1rem;
+	z-index: var(--z-back);
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+
+.LogoImage-About {
+	height: 200px;
+}
+
+@media screen and (min-width: 1120px) {
+	.LogoImage-About {
+		height: 400px;
+	}
+	.About-Full-Container {
+		height: 100%;
+	}
 }
