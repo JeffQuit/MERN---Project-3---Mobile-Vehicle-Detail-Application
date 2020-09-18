@@ -53,7 +53,7 @@ export default function Login({ setAuthorize }) {
       };
 
       //redirect function for logging into the admin page.
-      let history = useHistory()
+      let history = useHistory();
 
       function redirect() {
         if (authorize) {

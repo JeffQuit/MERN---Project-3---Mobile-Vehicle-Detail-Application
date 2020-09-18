@@ -57,7 +57,7 @@ export default function Register() {
     <div className="Login-Full-Container ">
       <MDBContainer>
         <form onSubmit={handleFormSubmit}>
-          <p className="h4 text-center py-4">Gerra's Login</p>
+          <p className="h4 text-center py-4">User Signup</p>
           <MDBInput
             label="Email"
             outline

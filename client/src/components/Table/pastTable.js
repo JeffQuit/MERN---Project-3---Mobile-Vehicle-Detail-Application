@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { MDBDataTableV5 } from 'mdbreact';
-import appointmentAPI from "../../utils/appointmentAPI.js"
+import { MDBDataTableV5, MDBBtn } from 'mdbreact';
+import appointmentAPI from "../../utils/appointmentAPI.js";
+import { Link } from "react-router-dom";
+import Register from "../Register/Register"
 
 //This page will display the compenent for the all of the upcoming appointments. 
-
 
 //Use a card and add a table of all the upcoming appointments. 
 // Create a button to change the state of completed to false. 
@@ -13,14 +14,12 @@ export default function Basic() {
         // Setting our component's initial state
         const [rows, setRows] = useState([])
         const [datatable, setDatatable] = useState({})
-        
-
-          
+        const [logged, setLogged] = useState(true)
         // Load all books and store them with setBooks
         useEffect(() => {
             loadBookings();
-        });
-        
+        }, []);
+
         //The setRows function sets the rows with the data returned from db based on 
         // iscompleted = true && if the date requested is less than the current date
         // Loads all bookings and sets them to bookings
@@ -97,17 +96,15 @@ export default function Basic() {
             });
           });
         };
-
         // console.log( datatable)
   return(
       <div>
-    <MDBDataTableV5 
-        hover entriesOptions={[5, 20, 25]} 
-        entries={5} 
-        pagesAmount={4} 
-        data={datatable}
-    />
-    </div>
+            
+            <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={datatable}/>
+            
+            <Link component={Register} to={"/signup"}><MDBBtn className="btn btn-outline-black" type="submit">Register</MDBBtn></Link>    
+     
+      </div>
   ) 
   
 }
