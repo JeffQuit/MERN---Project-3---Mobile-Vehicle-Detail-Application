@@ -10,7 +10,6 @@ import {
   MDBInput,
 } from "mdbreact";
 import "./Contact.css";
-import axios from "axios";
 
 export default class Contact extends Component {
   state = {

@@ -14,11 +14,9 @@ export default function Basic() {
         // Setting our component's initial state
         const [rows, setRows] = useState([])
         const [datatable, setDatatable] = useState({})
-        const [logged, setLogged] = useState(true)
+
         // Load all books and store them with setBooks
-        useEffect(() => {
-            loadBookings();
-        }, []);
+        useEffect(loadBookings, []);
 
         //The setRows function sets the rows with the data returned from db based on 
         // iscompleted = true && if the date requested is less than the current date
@@ -26,22 +24,21 @@ export default function Basic() {
         function loadBookings() {
         appointmentAPI.findAll()
           .then(res => {
-             setRows(() => { 
-               for(let datas of res.data ) {
-                // Get today's date
+            setRows(() => { 
+              for(let datas of res.data) {
+                   // Get today's date
                 let todaysDate = new Date();
-
+                
                 let dateReq = datas.datereq;
-
+                
                 dateReq = new Date(dateReq);
-
-                  if (datas.iscompleted = true && dateReq < todaysDate) {
-                    datas.iscompleted = true;
-                    rows.push(datas)
-                    // console.log(datas.iscompleted)
-                  }
-               }
-            });
+                 
+                if (datas.iscompleted = true && dateReq < todaysDate ) {
+                   
+                   rows.push(datas)
+                 }
+              }
+           })
             //sets the columns and rows with the data returned
             setDatatable({
               columns: [

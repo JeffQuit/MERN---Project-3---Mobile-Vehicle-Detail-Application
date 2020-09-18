@@ -14,9 +14,7 @@ export default function Basic() {
        const [datatable, setDatatable] = useState({});
 
        // Load all books and store them with setBooks
-       useEffect(() => {
-           loadBookings()
-       }, [])
+       useEffect(loadBookings, []);
        
         //The setRows function sets the rows with the data returned from db based on 
         // iscompleted = false && if the date requested is greater than the current date
@@ -28,10 +26,14 @@ export default function Basic() {
               for(let datas of res.data) {
                    // Get today's date
                 let todaysDate = new Date();
+                
                 let dateReq = datas.datereq;
+                
                 dateReq = new Date(dateReq);
-                 if (datas.iscompleted === false && dateReq > todaysDate ) {
-                   rows.push(datas)
+                 
+                if (datas.iscompleted === false && dateReq > todaysDate ) {
+                  datas.iscompleted = true;
+                    rows.push(datas)
                  }
               }
            })
