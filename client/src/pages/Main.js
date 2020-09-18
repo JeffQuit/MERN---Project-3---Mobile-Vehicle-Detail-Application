@@ -7,7 +7,6 @@ import Pricing from '../components/Pricing/Pricing';
 import About from '../components/About/About';
 import Socialmedia from '../components/Socialmedia/Socialmedia';
 import Contact from '../components/Contact/Contact';
-import Login from '../components/Login/Login';
 
 export default function Main() {
 	return (
@@ -16,7 +15,7 @@ export default function Main() {
 			<Pricing />
 			<About />
 			<Socialmedia />
-			<Contact />	
+			<Contact />
 		</div>
 	);
 }
