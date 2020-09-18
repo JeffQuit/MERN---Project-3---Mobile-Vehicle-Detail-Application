@@ -15,7 +15,7 @@ export default function Main() {
 			<Pricing />
 			<About />
 			<Socialmedia />
-			<Contact />	
+			<Contact />
 		</div>
 	);
 }
