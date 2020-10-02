@@ -84,6 +84,12 @@ export default function Basic() {
                  width: 150,
                },
                {
+                label: 'Service',
+                field: 'servicerequested',
+                sort: 'disabled',
+                width: 150,
+              },
+               {
                  label: 'Email',
                  field: 'email',
                  width: 270,
