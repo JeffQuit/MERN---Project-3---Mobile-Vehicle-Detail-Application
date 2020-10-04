@@ -16,9 +16,11 @@ export const WashPackages = [
 			'Dress exterior trim',
 			'Clean and polish emblems',
 			'Polish wheels',
+			'Apply wax/sealant',
+			'Final Wipe Down w/ Carnauba Wax'
 		],
 		packagePriceTitle: 'Prices:',
-		packagePriceArr: ['Small Vehicle:  $140+', 'Medium Vehicles: $170+', 'Large Vehicles: $200 - $240', 'Extra Large Vehicles: $300+'],
+		packagePriceArr: ['Small Vehicle:  $180+', 'Medium Vehicles: $200+', 'Large Vehicles: $250+', 'Extra Large Vehicles: $300+'],
 		packageEstimatedTimeTitle: 'Est. Time:',
 		packageEstimatedTimeArr: ['Small Vehicle: 3.5 Hours', 'Medium Vehicle: 4+ Hours', 'Large Vehicle: 6+ Hours', 'Extra Large Vehicle: 8+ Hours'],
 		tNailSRC: '/Assets/Images/PricingTnails/AllInOneCleaning.jpg',
@@ -30,7 +32,7 @@ export const WashPackages = [
 		packageCat: 'Detailing Services',
 		packageName: 'Detail Wash & Wax',
 		packageDetailTitle: 'Package Includes:',
-		packageDetailBullets: ['Hand Wash & Dry', 'Clay exterior surfaces', 'Apply Wax/Sealant', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires & Fenders', 'Dress Exterior Trim'],
+		packageDetailBullets: ['Hand Wash & Dry', 'Clay exterior surfaces', 'Apply Wax/Sealant', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires & Fenders', 'Dress Exterior Trim', 'Paint Decontamination', 'Dress Exterior Trims', 'Final Wipe Down w/ Carnauba Wax'],
 		packagePriceTitle: 'Prices:',
 		packagePriceArr: ['Small Vehicle:  $75 - $80', 'Medium Vehicles: $85 - $90', 'Large Vehicles: $95 - 100', 'Extra Large Vehicles: $110+'],
 		packageEstimatedTimeTitle: 'Est. Time:',
@@ -44,7 +46,7 @@ export const WashPackages = [
 		packageCat: 'Detailing Services',
 		packageName: 'Express Detail',
 		packageDetailTitle: 'Package Includes:',
-		packageDetailBullets: ['Hand Wash & Dry', 'Clean Wheels, Tires, Fenders, Gas Cap', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires'],
+		packageDetailBullets: ['Hand Wash & Dry', 'Clean Wheels, Tires, Fenders, Gas Cap', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires',  'Final Wipe Down w/ Carnauba Wax '],
 		packagePriceTitle: 'Prices:',
 		packagePriceArr: ['Small Vehicle:  $35', 'Medium Vehicles: $45', 'Large Vehicles: $55', 'Extra Large Vehicles: $65'],
 		packageEstimatedTimeTitle: 'Est. Time:',
@@ -52,4 +54,5 @@ export const WashPackages = [
 		tNailSRC: '/Assets/Images/PricingTnails/ExpressDetail.jpg',
 		PackageDetailParagraph: 'Quick and affordable exterior detailing package.',
 	},
+	
 ];
