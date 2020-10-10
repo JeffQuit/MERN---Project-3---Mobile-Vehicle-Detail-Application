@@ -1,88 +1,63 @@
-import React from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBCard, MDBCardImage, MDBCardBody, MDBCardText } from 'mdbreact';
-import './Socialmedia.css';
+import React from "react";
+import {
+  MDBContainer,
+  // MDBRow,
+  // MDBCol,
+  // MDBCardTitle,
+  // MDBCard,
+  // MDBCardImage,
+  // MDBCardBody,
+  // MDBCardText,
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+} from "mdbreact";
+import "./Socialmedia.css";
 
 export default function Socialmedia() {
-	return (
-		<div className="Socialmedia-Full-Container">
-			<MDBContainer className="mt-5">
-				<MDBCardTitle className="h2">Instagram</MDBCardTitle>
-				<MDBRow>
-					{/* <MDBCol md="4">
-            <MDBView hover>
-              <img src="/Assets/Images/img3.jpg" className="img-fluid" alt="" />
-              <a
-                href="https://www.instagram.com/p/BZOwFWXHF5m/"
-                target="_blank"
-              >
-                <MDBMask className="flex-center" overlay="red-slight">
-                  <p className="white-text">Detailing done for @ends_uno</p>
-                </MDBMask>
-              </a>
-            </MDBView>
-          </MDBCol> */}
-					<MDBCol>
-						<MDBCard className="mx-auto" style={{ width: '20rem' }}>
-							<a href="https://www.instagram.com/p/BZOwFWXHF5m/" target="_blank" rel="noopener noreferrer">
-								<MDBCardImage className="img-fluid" src="/Assets/Images/img3.jpg" waves />
-							</a>
-							<MDBCardBody>
-								{/* <MDBCardTitle>Title</MDBCardTitle> */}
-								<MDBCardText>Detailing done for @ends_uno</MDBCardText>
-							</MDBCardBody>
-						</MDBCard>
-					</MDBCol>
-					{/* <MDBCol md="4">
-            <MDBView hover>
-              <img src="/Assets/Images/img2.jpg" className="img-fluid" alt="" />
-              <a
-                href="https://www.instagram.com/p/BY6aa9CHW5F/"
-                target="_blank"
-              >
-                <MDBMask className="flex-center" overlay="red-slight">
-                  <p className="white-text">Detailing done for @ends_uno</p>
-                </MDBMask>
-              </a>
-            </MDBView>
-          </MDBCol> */}
-					<MDBCol>
-						<MDBCard className="mx-auto" style={{ width: '20rem' }}>
-							<a href="https://www.instagram.com/p/BY6aa9CHW5F/" target="_blank" rel="noopener noreferrer">
-								<MDBCardImage className="img-fluid" src="/Assets/Images/Img2.jpg" waves />
-							</a>
-							<MDBCardBody>
-								{/* <MDBCardTitle>Title</MDBCardTitle> */}
-								<MDBCardText>Detailing done for @ends_uno</MDBCardText>
-							</MDBCardBody>
-						</MDBCard>
-					</MDBCol>
-					{/* <MDBCol md="4">
-            <MDBView hover>
-              <img src="/Assets/Images/img1.jpg" className="img-fluid" alt="" />
-              <a
-                href="https://www.instagram.com/p/B0KSDpgH0Ph/"
-                target="_blank"
-              >
-                <MDBMask className="flex-center" overlay="red-slight">
-                  <p className="white-text">Detailing done for @1nice_subie</p>
-                </MDBMask>
-              </a>
-            </MDBView>
-          </MDBCol> */}
-
-					<MDBCol>
-						<MDBCard className="mx-auto" style={{ width: '20rem' }}>
-							<a href="https://www.instagram.com/p/B0KSDpgH0Ph/" target="_blank" rel="noopener noreferrer">
-								<MDBCardImage className="img-fluid" src="/Assets/Images/Img1.jpg" waves />
-							</a>
-							<MDBCardBody>
-								{/* <MDBCardTitle>Title</MDBCardTitle> */}
-								<MDBCardText>Detailing done for @1nice_subie</MDBCardText>
-							</MDBCardBody>
-						</MDBCard>
-					</MDBCol>
-				</MDBRow>
-			</MDBContainer>
-		</div>
-	);
+  return (
+    <div className="Socialmedia-Full-Container">
+      <MDBContainer>
+        <MDBCarousel
+          activeItem={1}
+          length={3}
+          showControls={true}
+          showIndicators={false}
+          className="z-depth-1"
+          slide
+        >
+          <MDBCarouselInner>
+            <MDBCarouselItem itemId="1">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="/Assets/Images/socialmedia1.jpg"
+                  alt="First slide"
+                />
+              </MDBView>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="2">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="/Assets/Images/socialmedia2.jpg"
+                  alt="Second slide"
+                />
+              </MDBView>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="3">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="/Assets/Images/socialmedia3.jpg"
+                  alt="Third slide"
+                />
+              </MDBView>
+            </MDBCarouselItem>
+          </MDBCarouselInner>
+        </MDBCarousel>
+      </MDBContainer>
+    </div>
+  );
 }
