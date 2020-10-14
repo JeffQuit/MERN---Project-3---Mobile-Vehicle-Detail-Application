@@ -8,7 +8,7 @@ exports.sendContactMail = function (req, res) {
   //Sendgrid Data Requirements
   const msg = {
     to: sender, //recipient
-    from: "techjkim@gmail.com",
+    from: "gerayanez@gmail.com",
     subject: topic,
     text: `
 	From:\n
@@ -38,7 +38,7 @@ exports.sendClientMail = function (req, res) {
   //Sendgrid Data Requirements
   const msg = {
     to: email,
-    from: "techjkim@gmail.com",
+    from: "gerayanez@gmail.com",
     subject: "Thank you for booking!",
     text: `
 	Thanks ${name}! We'll reach back out to you!`,
@@ -76,8 +76,8 @@ exports.sendBookedMail = function (req, res) {
   } = req.query;
   //Sendgrid Data Requirements
   const msg = {
-    to: "jonathan213kim@gmail.com",
-    from: "techjkim@gmail.com",
+    to: "Gerasautodetailing@gmail.com",
+    from: "gerayanez@gmail.com",
     subject: name + " has booked with you.",
     text: `
 	From:\n
