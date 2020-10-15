@@ -14,8 +14,9 @@ export default function About() {
 								<img src="/Assets/Images/FinalLogo1.png" alt="Logo" className="LogoImage-About" />
 								<p className="blue-text my-4 font-weight-bold">Family owned and operrated. EST 2020</p>
 								<MDBCardText>
-									Gera’s automotive detailing services began business in early 2020 by co owners/ operators Gerardo Yanez & Stephanie Ibarria. Gera’s passion for detailing first started as a hobby of his, along side his best friend Victor Gutierrez. When things got tough or life
-									was too stressful, there was nothing like the satisfaction of a smooth finish on Gera’s E30. Naturally the hobby turned into business all thanks to family and friends.
+								Gera’s Automotive Detailing was first established early 2020 by Owners/Operators Gerardo Yanez & Stephanie Janet Ibarria. Gerardo had the privilege of learning the craft from his best friend Victor Gutierrez in 2010. Naturally, what was a hobby would soon come to unfold as the business you see today. Gera’s passion for cars compliments his craft for detailing. 
+
+								Our mission at Gera’s Auto Detailing is to educate our customers what proper tools & techniques can do to protect your vehicle. We do everything to insure you will be beyond satisfied with the results, as we treat each and every vehicle as if it were our own.
 								</MDBCardText>
 							</MDBCardBody>
 						</MDBJumbotron>
