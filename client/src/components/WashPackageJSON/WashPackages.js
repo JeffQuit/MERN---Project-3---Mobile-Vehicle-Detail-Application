@@ -17,12 +17,12 @@ export const WashPackages = [
 			'Clean and polish emblems',
 			'Polish wheels',
 			'Apply wax/sealant',
-			'Final Wipe Down w/ Carnauba Wax'
+			'Final Wipe Down w/ Carnauba Wax',
 		],
 		packagePriceTitle: 'Prices:',
-		packagePriceArr: ['Small Vehicle:  $180+', 'Medium Vehicles: $200+', 'Large Vehicles: $250+', 'Extra Large Vehicles: $300+'],
+		packagePriceArr: ['The price for this service will depend on the current condition of the vehicle. Please call or send an email to request a quote'],
 		packageEstimatedTimeTitle: 'Est. Time:',
-		packageEstimatedTimeArr: ['Small Vehicle: 3.5 Hours', 'Medium Vehicle: 4+ Hours', 'Large Vehicle: 6+ Hours', 'Extra Large Vehicle: 8+ Hours'],
+		packageEstimatedTimeArr: ['The time for this service will depend on the current condition of the vehicle. Please call or send an email to request a quote'],
 		tNailSRC: '/Assets/Images/PricingTnails/AllInOneCleaning.jpg',
 		PackageDetailParagraph: 'All encompassing vehicle detailing package.',
 	},
@@ -46,7 +46,7 @@ export const WashPackages = [
 		packageCat: 'Detailing Services',
 		packageName: 'Express Detail',
 		packageDetailTitle: 'Package Includes:',
-		packageDetailBullets: ['Hand Wash & Dry', 'Clean Wheels, Tires, Fenders, Gas Cap', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires',  'Final Wipe Down w/ Carnauba Wax '],
+		packageDetailBullets: ['Hand Wash & Dry', 'Clean Wheels, Tires, Fenders, Gas Cap', 'Wipe Down Door Jambs', 'Clean Exterior Glass & Windows', 'Dress Tires', 'Final Wipe Down w/ Carnauba Wax '],
 		packagePriceTitle: 'Prices:',
 		packagePriceArr: ['The price for this service will depend on the current condition of the vehicle. Please call or send an email to request a quote'],
 		packageEstimatedTimeTitle: 'Est. Time:',
@@ -54,5 +54,4 @@ export const WashPackages = [
 		tNailSRC: '/Assets/Images/PricingTnails/ExpressDetail.jpg',
 		PackageDetailParagraph: 'Quick and affordable exterior detailing package.',
 	},
-	
 ];
