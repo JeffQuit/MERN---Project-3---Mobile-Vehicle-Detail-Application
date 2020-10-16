@@ -20,7 +20,7 @@ export default function Socialmedia() {
 		<div className="Socialmedia-Full-Container" id="gallery">
 			<h2 className="Socialmedia-Section-Title">Image Gallery</h2>
 			<MDBContainer>
-				<MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={false} className="z-depth-1" slide>
+				<MDBCarousel activeItem={1} length={4} showControls={true} showIndicators={false} className="z-depth-1" slide>
 					<MDBCarouselInner>
 						<MDBCarouselItem itemId="1">
 							<MDBView>
@@ -35,6 +35,11 @@ export default function Socialmedia() {
 						<MDBCarouselItem itemId="3">
 							<MDBView>
 								<img className="d-block w-100" src="/Assets/Images/socialmedia3.jpg" alt="Third slide" />
+							</MDBView>
+						</MDBCarouselItem>
+						<MDBCarouselItem itemId="4">
+							<MDBView>
+								<img className="d-block w-100" src="/Assets/Images/socialmedia4.jpg" alt="Fourth slide" />
 							</MDBView>
 						</MDBCarouselItem>
 					</MDBCarouselInner>
