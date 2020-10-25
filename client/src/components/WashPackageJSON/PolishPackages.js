@@ -20,9 +20,9 @@ export const PolishPackages = [
             'Final Wipe Down w/ Carnauba Wax'
         ],
         packagePriceTitle: 'Prices:',
-        packagePriceArr: ['Small Vehicle:  $200', 'Medium Vehicles: $300+', 'Large Vehicles: $400+', 'Extra Large Vehicles: $500+'],
+        packagePriceArr: ['The price for this service will depend on the current condition of the vehicle. Please call or send an email to request a quote'],
         packageEstimatedTimeTitle: 'Est. Time:',
-        packageEstimatedTimeArr: ['Small Vehicle: 4 Housr', 'Medium Vehicle: 7 Hours', 'Large Vehicle: 10 Hours', 'Extra Large Vehicle: 10+ Hours'],
+        packageEstimatedTimeArr: ['The time for this service will depend on the current condition of the vehicle. Please call or send an email to request a quote'],
         tNailSRC: '/Assets/Images/OneStepPolish.jpg',
         PackageDetailParagraph: 'Quick and affordable exterior detailing package.',
     },

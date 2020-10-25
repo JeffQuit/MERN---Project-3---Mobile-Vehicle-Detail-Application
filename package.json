@@ -1,10 +1,10 @@
 {
-	"name": "1pagerapp",
+	"name": "MobileDetailingService",
 	"version": "1.0.0",
 	"description": "MobileDetailingService",
 	"main": "server.js",
 	"scripts": {
-		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev && --max-http-header-size 16384",
+		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev ",
 		"start:prod": "node server.js",
 		"start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
 		"client": "cd client && npm run start",
